@@ -21,7 +21,7 @@ try:
     KEYBOARD_AVAILABLE = True
 except ImportError:
     KEYBOARD_AVAILABLE = False
-    print("keyboard module not installed – Ctrl pause feature disabled.")
+    print("keyboard module not installed - Ctrl pause feature disabled.")
 
 if sys.platform == "win32":
     ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("com.example.chessCheeter")
@@ -30,7 +30,7 @@ if sys.platform == "win32":
 # Stockfish configuration
 # ----------------------------------------------------------------------
 STOCKFISH_PATH = r"H:\My Drive\MODELS\Stockfish.exe"
-ANALYSIS_TIME_MS = 500
+ANALYSIS_TIME_MS = 50
 
 def hex_to_bgr(hex_color):
     hex_color = hex_color.lstrip("#")
@@ -498,9 +498,9 @@ class ScreenBorderOverlay:
 
         try:
             self._send_click(from_x, from_y)
-            time.sleep(0.2)
+            # time.sleep(0.2)
             self._send_click(to_x, to_y)
-            time.sleep(0.1)
+            # time.sleep(0.1)
         except Exception as e:
             self.log_error(f"Execution failed: {e}")
             return
